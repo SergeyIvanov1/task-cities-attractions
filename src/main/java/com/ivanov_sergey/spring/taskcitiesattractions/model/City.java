@@ -35,7 +35,6 @@ public class City implements Serializable {
 
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "city_id")
-    @ToString.Exclude
     private Set<Attraction> attractions = new HashSet<>();
 
     @Override

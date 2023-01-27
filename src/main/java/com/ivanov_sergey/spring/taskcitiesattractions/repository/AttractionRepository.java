@@ -1,4 +1,4 @@
-package com.ivanov_sergey.spring.taskcitiesattractions.dao;
+package com.ivanov_sergey.spring.taskcitiesattractions.repository;
 
 import com.ivanov_sergey.spring.taskcitiesattractions.model.Attraction;
 import org.springframework.data.domain.Page;
@@ -8,10 +8,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface AttractionRepository extends JpaRepository<Attraction, Long> {
-//    Optional<User> findByEmail(String email);
-//    Optional<User> findByUsername(String username);
 
     Page<Attraction> findAll(Pageable pageable);
-//    Page<Attraction> findAllByCity(String CityName, Pageable pageable);
-
 }

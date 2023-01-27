@@ -60,26 +60,4 @@ public class Attraction implements Serializable {
     public int hashCode() {
         return Objects.hash(id, attractionName, dateBuilding, shortDescription, attractionType, cityId);
     }
-
-    //    @ManyToOne
-//    @JoinColumn(name = "city_id")
-//    private City city;
-
-//    @Override
-//    public boolean equals(Object o) {
-//        if (this == o) return true;
-//        if (o == null || getClass() != o.getClass()) return false;
-//        Attraction that = (Attraction) o;
-//        return Objects.equals(id, that.id)
-//                && Objects.equals(attractionName, that.attractionName)
-//                && Objects.equals(dateBuilding, that.dateBuilding)
-//                && Objects.equals(shortDescription, that.shortDescription)
-//                && attractionType == that.attractionType
-//                && Objects.equals(city, that.city);
-//    }
-//
-//    @Override
-//    public int hashCode() {
-//        return Objects.hash(id, attractionName, dateBuilding, shortDescription, attractionType, city);
-//    }
 }

@@ -1,6 +1,6 @@
 package com.ivanov_sergey.spring.taskcitiesattractions.service.impl;
 
-import com.ivanov_sergey.spring.taskcitiesattractions.dao.AttractionRepository;
+import com.ivanov_sergey.spring.taskcitiesattractions.repository.AttractionRepository;
 import com.ivanov_sergey.spring.taskcitiesattractions.model.Attraction;
 import com.ivanov_sergey.spring.taskcitiesattractions.service.AttractionService;
 import lombok.extern.slf4j.Slf4j;
@@ -44,18 +44,4 @@ public class AttractionServiceImpl implements AttractionService {
         attractionRepository.deleteById(id);
         log.info("IN delete - attraction with id: {} successfully deleted", id);
     }
-//    private final AttractionMapper attractionMapper;
-
-//    public AttractionServiceImpl(AttractionRepository attractionRepository, AttractionMapper attractionMapper) {
-//        this.attractionRepository = attractionRepository;
-//        this.attractionMapper = attractionMapper;
-//    }
-
-//    @Override
-//    public PageDTO<AttractionDTO> getAllAttractions(int page, int size, String sortBy) {
-//        Pageable pageable = PageRequest.of(page, size, Sort.by(sortBy));
-//        Page<AttractionDTO> attractionDTOS = attractionRepository.findAll(pageable)
-//                .map(attractionMapper::mapToDto);
-//        return new PageDTO<>(attractionDTOS, pageable);
-//    }
 }

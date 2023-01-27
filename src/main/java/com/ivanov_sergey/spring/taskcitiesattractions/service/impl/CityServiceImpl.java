@@ -1,6 +1,6 @@
 package com.ivanov_sergey.spring.taskcitiesattractions.service.impl;
 
-import com.ivanov_sergey.spring.taskcitiesattractions.dao.CityRepository;
+import com.ivanov_sergey.spring.taskcitiesattractions.repository.CityRepository;
 import com.ivanov_sergey.spring.taskcitiesattractions.exception_handling.NoSuchEntityException;
 import com.ivanov_sergey.spring.taskcitiesattractions.model.City;
 import com.ivanov_sergey.spring.taskcitiesattractions.service.CityService;

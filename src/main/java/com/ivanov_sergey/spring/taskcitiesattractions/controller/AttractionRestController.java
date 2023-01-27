@@ -1,6 +1,7 @@
 package com.ivanov_sergey.spring.taskcitiesattractions.controller;
 
 import com.ivanov_sergey.spring.taskcitiesattractions.model.Attraction;
+import com.ivanov_sergey.spring.taskcitiesattractions.model.City;
 import com.ivanov_sergey.spring.taskcitiesattractions.service.AttractionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -19,28 +20,21 @@ public class AttractionRestController {
         this.attractionService = attractionService;
     }
 
-//    @GetMapping("")
-//    public ResponseEntity<PageDTO<AttractionDTO>> getAllAttractions(
-//            @RequestParam(value = "page", required = false, defaultValue = "0") int page,
-//            @RequestParam(value = "size", required = false, defaultValue = "${default.pageSize}") int size,
-//            @RequestParam(value = "sort", required = false, defaultValue = "${attraction.sortBy}") String sortBy) {
-//        return new ResponseEntity<>(attractionService.getAllAttractions(page, size, sortBy), HttpStatus.OK);
-//    }
-
     @GetMapping("")
     public Page<Attraction> showAllAttractions(@PageableDefault(sort = {"attractionName"})Pageable pageable){
         return attractionService.findAllAttractions(pageable);
     }
 
-//    @GetMapping("")
-//    public Page<Attraction> showAllAttractionByCity(String cityName, Pageable pageable){
-//        return attractionService.findAttractionsByCity(cityName, pageable);
-//    }
-
     @PostMapping("/attraction")
     public Attraction addAttraction(@RequestBody Attraction attraction){
         attractionService.addAttraction(attraction);
         return attraction;
+    }
+
+    @PutMapping("/attraction")
+    public Attraction updateCity(@RequestBody Attraction city){
+        attractionService.addAttraction(city);
+        return city;
     }
 
     @DeleteMapping("/{id}")
